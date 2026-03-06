@@ -87,4 +87,27 @@ fn main() {
         let black: Color = Color(0, 0, 0);
         let origin: Point = Point(0, 0, 0);
     }
+
+    // Defining Unit Like Structs
+    {
+        struct AlwaysEqual;
+        let subject = AlwaysEqual;
+    }
+
+    // This will result in an error because we want to own the data, if not then we will run into compile time issue that says liftime specifier needed
+    /* {
+        struct User {
+            active: bool,
+            username: &str,
+            email: &str,
+            sign_in_count: u64,
+        }
+
+        let user1 = User {
+            active: true,
+            username: "someusername123",
+            email: "someone@example.com",
+            sign_in_count: 1,
+        };
+    } */
 }
